@@ -31,7 +31,18 @@ class Friend extends React.Component {
         </Dropdown>
       </div>
     )} else {
-      return <div>Loading..</div>
+      return <div style={{fontFamily:"Avenir"}}>
+              <Dropdown item text={this.props.friend.username} as="a" src={this.props.friend.avatar} name='friend' style={{fontFamily:"Avenir", fontWeight:"525", color:"#7590AC"}}>
+                <Dropdown.Menu>
+
+
+              <Dropdown.Item text="start new chat" onClick={()=>this.props.updateActiveChat("new")} data-id="new">
+
+                    </Dropdown.Item>
+
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
     }
   }
 }
