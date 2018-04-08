@@ -3,7 +3,7 @@ import Friend from './Friend'
 import { Sidebar, Segment, Button, Menu, Icon, Accordian } from 'semantic-ui-react'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-doms'
+import { withRouter } from 'react-router-dom'
 import * as Actions from '../actions'
 
 
