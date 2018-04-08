@@ -79,17 +79,17 @@ class LoginForm extends React.Component {
       <div className="login">
         <h2 style={{weight:"750", color:"#718ca1", paddingTop:"0.75em"}}>Log In</h2>
       <form>
-      <input type="text" name="username" onChange={this.formListener} />
-      <input type="password" name="password" onChange={this.formListener} />
+      <input type="text" name="username" onChange={this.formListener} placeholder="username"/>
+      <input type="password" name="password" onChange={this.formListener} placeholder="password" />
       <button className="buttons" onClick={this.loginUser}>Login</button>
       </form>
 
 
       <h2 style={{weight:"750", color:"#718ca1", paddingTop:"0.75em"}}>New User? Sign Up!</h2>
 <form>
-  <input type="text" name="username" onChange={this.formListener} />
-  <input type="password" name="password" onChange={this.formListener} />
-  <input type="password" name="password_confirmation" onChange={this.formListener} />
+  <input type="text" name="username" onChange={this.formListener} placeholder="username" />
+  <input type="password" name="password" onChange={this.formListener} placeholder="password" />
+  <input type="password" name="password_confirmation" onChange={this.formListener} placeholder="password confirmation" />
   <button className="buttons" onClick={this.signUpUser} style={{backgroundColor:"#21d8f8", color:"white", padding:"0.5em", fontFamily: "Avenir", borderRadius:"6px", borderStyle:"none"}}>Sign Up</button>
 </form>
 </div>
