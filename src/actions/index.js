@@ -5,7 +5,7 @@ export const ADD_NEW_FRIEND = 'ADD_NEW_FRIEND'
 
 export function loadCurrentUser(user) {
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/users/${user.id}`)
+    fetch(`https://chatster-app-api.herokuapp.com/api/v1/users/${user.id}`)
     .then(response => response.json())
     .then(json => dispatch({
       type: CURRENT_USER,
@@ -18,7 +18,7 @@ export function loadCurrentUser(user) {
 
 export function addNewFriend(currentUser, friend) {
   return(dispatch) => {
-    fetch('http://localhost:3000/api/v1/friendships', {
+    fetch('https://chatster-app-api.herokuapp.com/api/v1/friendships', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ export function addNewFriend(currentUser, friend) {
 
 export function createNewChat(newChat) {
   return(dispatch) => {
-    fetch('http://localhost:3000/api/v1/chats', {
+    fetch('https://chatster-app-api.herokuapp.com/api/v1/chats', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',

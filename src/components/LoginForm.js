@@ -31,7 +31,7 @@ class LoginForm extends React.Component {
     event.preventDefault()
     const token = localStorage.getItem('token')
 
-    return fetch("http://localhost:3000/api/v1/login", {
+    return fetch("https://chatster-app-api.herokuapp.com/api/v1/login", {
       method: 'POST',
       headers:  {
         'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
 
   signUpUser = (event) => {
   event.preventDefault()
-  fetch("http://localhost:3000/api/v1/signup", {
+  fetch("https://chatster-app-api.herokuapp.com/api/v1/signup", {
     method: 'POST',
     headers:
     {

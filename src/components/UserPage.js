@@ -124,7 +124,7 @@ saveNewChat = (event) => {
 
 
   fetchActiveChatInfo = (chat) => {
-    fetch(`http://localhost:3000/api/v1/chats/${chat.id}`)
+    fetch(`https://chatster-app-api.herokuapp.com/api/v1/chats/${chat.id}`)
     .then(response => response.json())
     .then(json => {
 
@@ -145,7 +145,7 @@ saveNewChat = (event) => {
 
     let newMessage = {content: message, chat_id: chat.id, user_id: this.props.user.user.id, chat: chat}
 
-    const url = 'http://localhost:3000/api/v1/chats/' + this.state.activeChat.id +'/messages';
+    const url = 'https://chatster-app-api.herokuapp.com/api/v1/chats/' + this.state.activeChat.id +'/messages';
 
     fetch(url, {
       method: 'post',

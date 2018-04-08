@@ -20,7 +20,7 @@ class FindNewFriendsContainer extends React.Component {
     })
     friendAndUserIds.push(this.props.user.user.id)
     console.log("friendAndUserIds", friendAndUserIds)
-    fetch("http://localhost:3000/api/v1/users")
+    fetch("https://chatster-app-api.herokuapp.com/api/v1/users")
       .then(response => response.json())
       .then(json => {
         this.setState({

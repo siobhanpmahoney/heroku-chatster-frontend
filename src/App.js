@@ -51,7 +51,7 @@ class App extends Component {
    componentDidMount() {
     const token=localStorage.getItem('token')
     if (token) {
-      return fetch("http://localhost:3000/api/v1/current_user", {
+      return fetch("https://chatster-app-api.herokuapp.com/api/v1/current_user", {
         headers:  {
           'Content-Type': 'application/json',
           Accepts: 'application/json',
@@ -85,7 +85,7 @@ class App extends Component {
   //   event.preventDefault()
   //   let username = event.target.childNodes[0].value
   //
-  //   fetch('http://localhost:3000/api/v1/users',
+  //   fetch('https://chatster-app-api.herokuapp.com/api/v1/users',
   //   {
   //     method: 'post',
   //     headers:{
