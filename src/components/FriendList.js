@@ -1,7 +1,9 @@
 import React from 'react'
 import Friend from './Friend'
 import { Sidebar, Segment, Button, Menu, Icon, Accordian } from 'semantic-ui-react'
-
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as Actions from '../actions'
 
 
 
@@ -25,4 +27,16 @@ const FriendList = (props) => {
   )
 }
 
-export default FriendList
+function mapStateToProps(state, props) {
+  return {
+    user: state.user.user,
+    friends: state.user.friends,
+    chats: state.user.chats,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(Actions, dispatch);
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FriendList));
