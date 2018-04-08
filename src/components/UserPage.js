@@ -140,7 +140,7 @@ saveNewChat = (event) => {
 
   handleNewMessageSubmit = (event, chat, message) => {
     event.preventDefault()
-
+    debugger
     let u = this.props.user
 
     let newMessage = {content: message, chat_id: chat.id, user_id: this.props.user.user.id, chat: chat}

@@ -1,6 +1,7 @@
 import React from 'react';
 import ActiveChat from './ActiveChat'
 import { ActionCable } from 'react-actioncable-provider'
+import {withRouter} from 'react-router-dom'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
 
 
@@ -31,4 +32,4 @@ class ActiveChatContainer extends React.Component {
     }
 
 
-export default ActiveChatContainer
+export default withRouter(ActiveChatContainer)
