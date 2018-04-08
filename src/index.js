@@ -27,7 +27,7 @@ store.subscribe(throttle(() => {
 }, 1000));
 
 
-ReactDOM.render(<ActionCableProvider url={'ws://localhost:3000/cable'}>
+ReactDOM.render(<ActionCableProvider url={'ws://chatster-app-api.herokuapp.com/cable'}>
   <Provider store={store}>
     <BrowserRouter>
     <App />
