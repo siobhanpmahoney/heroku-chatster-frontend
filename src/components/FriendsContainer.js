@@ -4,6 +4,7 @@ import { Button, Menu, Header, Icon } from 'semantic-ui-react'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions'
+import {withRouter} from 'react-router-dom'
 
 
 class FriendsContainer extends React.Component {
@@ -41,4 +42,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(Actions, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendsContainer);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FriendsContainer));
