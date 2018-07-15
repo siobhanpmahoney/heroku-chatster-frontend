@@ -38,8 +38,9 @@ class ActiveChat extends React.Component {
     <div>
       <Comment.Group>
         <div className="messageHistory" scroll>{this.props.messages.sort((a,b)=> new Date(a.created_at) - new Date(b.created_at)).map((m) => {
+            let av = './' + {m.avatar}
             return(<Comment key={m.id} className="messageDisplay" >
-            <Comment.Avatar float attached="right" as='a' src= './' + {m.avatar} />
+            <Comment.Avatar float attached="right" as='a' src={av}/>
             <Comment.Content>
               <Comment.Author as='a' style={{fontFamily:"Avenir", fontWeight:"550"}}>{m.username}</Comment.Author>
               <Comment.Metadata>{this.formattedDate(m.created_at)}</Comment.Metadata>
