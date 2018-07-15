@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import * as Actions from '../actions'
 import { Button, Comment, Form, Header, Label, Segment, Sticky, Icon, Feed, Grid, Select, Input } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
-import "./lib/avatars/stevie.jpg"
 
 
 
@@ -38,9 +37,8 @@ class ActiveChat extends React.Component {
     <div>
       <Comment.Group>
         <div className="messageHistory" scroll>{this.props.messages.sort((a,b)=> new Date(a.created_at) - new Date(b.created_at)).map((m) => {
-            let av = './' + m.avatar
             return(<Comment key={m.id} className="messageDisplay" >
-            <Comment.Avatar float attached="right" as='a' src={av}/>
+            <Comment.Avatar float attached="right" as='a' src={m.avatar} />
             <Comment.Content>
               <Comment.Author as='a' style={{fontFamily:"Avenir", fontWeight:"550"}}>{m.username}</Comment.Author>
               <Comment.Metadata>{this.formattedDate(m.created_at)}</Comment.Metadata>
