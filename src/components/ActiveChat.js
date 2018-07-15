@@ -5,7 +5,7 @@ import * as Actions from '../actions'
 import { Button, Comment, Form, Header, Label, Segment, Sticky, Icon, Feed, Grid, Select, Input } from 'semantic-ui-react'
 import { withRouter } from 'react-router-dom'
 import "./lib/avatars/stevie.jpg"
-import "./lib/avatars"
+
 
 
 class ActiveChat extends React.Component {
