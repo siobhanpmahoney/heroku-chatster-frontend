@@ -16,6 +16,9 @@ class Friend extends React.Component {
       return chat.users.find((u) => {
         return u.id == this.props.friend.id
       })})
+
+      const avatar = "../../../heroku-chatster-app-api/" + this.props.friend.avatar
+      console.log("avatar", avatar)
     if (this.props.chats.length > 0) {
     return(
       <div style={{fontFamily:"Avenir"}}>
