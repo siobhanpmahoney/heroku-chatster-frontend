@@ -1,5 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as Actions from '../actions'
+import { withRouter, Redirect } from 'react-router';
+
 
 class LoginForm extends React.Component {
   static propTypes = {
@@ -14,6 +19,9 @@ class LoginForm extends React.Component {
         password: ""
       }
     }
+  }
+
+  componentDidUpdate(prevProps) {
   }
 
   formListener = (event) => {
@@ -46,8 +54,9 @@ class LoginForm extends React.Component {
         alert(res.error)
       }
       else {
-        window.location = `/`
+
         this.props.setLoggedInUser(res)
+        this.props.history.push('/')
       }
     })
   }
@@ -75,6 +84,7 @@ class LoginForm extends React.Component {
     }
 
   render() {
+    console.log(this.props)
     return (
       <div className="login">
         <h2 style={{weight:"750", color:"#718ca1", paddingTop:"0.75em"}}>Log In</h2>
@@ -101,4 +111,16 @@ class LoginForm extends React.Component {
 
 
 
-export default LoginForm;
+function mapStateToProps(state, props) {
+  return {
+    user: state.user.user,
+    friends: state.user.friends,
+    chats: state.user.chats,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(Actions, dispatch);
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginForm));

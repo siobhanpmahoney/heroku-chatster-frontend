@@ -42,9 +42,7 @@ class FindNewFriendsContainer extends React.Component {
 
 
   render() {
-    console.log(this.state.nonFriendUsers)
-    const friendAvatar = "../../../heroku-chatster-app-api/" + this.props.friend.avatar
-    console.log("avatar", friendAvatar)
+
     return (
       <div className="nonFriendContainer">
         <h1 className="nonFriendHeader">Add New Friends</h1>

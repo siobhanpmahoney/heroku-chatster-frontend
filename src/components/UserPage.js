@@ -5,8 +5,9 @@ import ActiveChatContainer from './ActiveChatContainer'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as Actions from '../actions'
-import { withRouter } from 'react-router';
+import { withRouter, Redirect } from 'react-router';
 import { Grid, Header } from 'semantic-ui-react'
+import LoginForm from './LoginForm'
 
 
 //      Removed message form old newChatForm
@@ -191,12 +192,10 @@ saveNewChat = (event) => {
 
 
   render() {
-    if (!this.props) {
-      return<div>loading..</div>
+    if (!this.props.user) {
+      return (<Redirect to='/login' />)
     }
-    if (this.props.friends == []) {
-      return<div>loading..</div>
-    }
+else
     return (
       <div>
 
