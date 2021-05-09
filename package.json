@@ -6,7 +6,7 @@
     "action-cable": "^0.0.9",
     "actioncable": "^5.1.5",
     "history": "^4.7.2",
-    "lodash": "^4.17.5",
+    "lodash": "^4.17.21",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-actioncable-provider": "^1.0.3",
